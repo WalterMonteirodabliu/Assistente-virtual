@@ -39,7 +39,7 @@ classDiagram
         +List<String> functions
     }
 
-    User "1" -- "0..*" Task : has
-    Task "1" -- "0..*" Notification : triggers
-    VirtualAssistant "1" -- "1" AI : uses
+    User "1" *-- "0..*" Task : has
+    Task "1" *-- "0..*" Notification : triggers
+    VirtualAssistant "1" *-- "1" AI : uses
 ```

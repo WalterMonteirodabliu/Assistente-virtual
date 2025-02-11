@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://viaduct.proxy.rlwy.net:53352/railway
+    username: postgres
+    password: tTRXdvNSZmqOUWzhtKqgGblfjRRsWIlW
+
+  jpa:
+    show-sql: true
+    open-in-view: false
+    hibernate:
+      ddl-auto: update  # Pode ser 'none', 'update', 'create', 'create-drop'
+    properties:
+      hibernate:
+        format_sql: true
+  # Configuração para melhorar a performance
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+  # H2 Console (se ainda estiver usando para testes locais)
+  h2:
+    console:
+      enabled: true
+      path: /h2-console

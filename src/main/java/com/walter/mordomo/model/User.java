@@ -1,10 +1,12 @@
 package com.walter.mordomo.model;
 
 import jakarta.persistence.*;
+import jakarta.transaction.Transactional;
 
 import java.util.List;
 
 @Entity
+@Table(name = "users")
 public class User {
 
     @Id
@@ -15,7 +17,7 @@ public class User {
     private String email;
     private String password;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Task> tasks;
 
     public Long getId() {

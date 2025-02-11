@@ -3,6 +3,7 @@ package com.walter.mordomo.model;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "assistants")
 public class VirtualAssistant {
 
     @Id

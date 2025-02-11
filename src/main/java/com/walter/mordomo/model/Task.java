@@ -6,6 +6,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
+@Table(name = "tasks")
 public class Task {
 
     @Id
@@ -20,7 +21,7 @@ public class Task {
     private LocalDateTime createdAt;
     private LocalDateTime dueDate;
 
-    @OneToMany(mappedBy = "task", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "task", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Notification> notifications;
 
     @ManyToOne
